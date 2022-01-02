@@ -71,7 +71,7 @@ jobs:
               curl -sL https://git.io/file-transfer | sh
               ./transfer gof $ROM_AB
 
-- name: Cleaning output
+       - name: Cleaning output
          if: env.BUILD_AB == 'true'
          run: sudo rm -rf ErfanGSIs/output/*
               
