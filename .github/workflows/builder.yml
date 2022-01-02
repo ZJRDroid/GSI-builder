@@ -56,9 +56,6 @@ jobs:
               curl -sL https://git.io/file-transfer | sh
               ./transfer gof $ROM_AONLY
            
-       - name: Cleaning output
-         if: env.BUILD_AB == 'true'
-         run: sudo rm -rf ErfanGSIs/output/*
          
        - name: Downloading rom and building A/B GSI
          if: env.BUILD_AB == 'true'
@@ -73,5 +70,9 @@ jobs:
          run: |
               curl -sL https://git.io/file-transfer | sh
               ./transfer gof $ROM_AB
+
+- name: Cleaning output
+         if: env.BUILD_AB == 'true'
+         run: sudo rm -rf ErfanGSIs/output/*
               
            
